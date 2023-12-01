@@ -1,17 +1,22 @@
 import React from 'react';
-import LoginForm from './components/login/LoginForm';
-import RegisterForm from './components/login/RegisterForm';
-import './App.css';
+import Signup from './components/login/Signup';
+import { Container } from 'react-bootstrap';
+import { AuthProvider } from './context/AuthContext';
+
 
 function App() {
   return (
-    <div className="App">
-      <div className="auth-form-container">
-        <LoginForm />
-        <RegisterForm />
-      </div>
-    </div>
-  );
+    <AuthProvider>
+      <Container 
+        className="d-flex align-items-center justify-content-center"
+        style={{ minHeight: "100vh" }}
+      >
+        <div className="w-100" style={{ maxWidth: "400px" }}>
+          <Signup />
+        </div>
+      </Container>
+    </AuthProvider>
+  )
 }
 
 export default App;
