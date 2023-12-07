@@ -1,0 +1,22 @@
+.card {
+  width: 149px; /* カードの幅 */
+  height: 119px; /* カードの高さ */
+  border-radius: 16px; /* 角丸の半径 */
+  background-size: cover; /* 背景画像をカバーとして設定 */
+  background-position: center; /* 背景画像を中央に配置 */
+  overflow: hidden; /* 画像がはみ出ないようにする */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.card h3 {
+  color: white; /* タイトルのテキスト色 */
+  z-index: 1;
+}
+
+.card:hover {
+  background-color: #e2e2e2;
+}

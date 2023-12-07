@@ -8,6 +8,11 @@ import Login from './components/login/Login';
 import PrivateRoute from './components/login/PrivateRoute';
 import ForgotPassword from './components/login/ForgotPassword';
 import UpdateProfile from './components/login/UpdateProfile';
+import Subjects from './pages/Subjects';
+import { useNavigate } from 'react-router-dom';
+
+import MechanicalEngineering from './pages/MechanicalEngineering'; // インポート
+import Results from './pages/Results';
 
 function App() {
   return (
@@ -28,10 +33,17 @@ function App() {
                 <PrivateRoute>
                   <UpdateProfile />
                 </PrivateRoute>
-              } /> 
+              } />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/forgot-password" Component={ForgotPassword} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/subjects" element={
+                <PrivateRoute>
+                  <Subjects />
+                </PrivateRoute>
+              } />
+              <Route path="/subjects/mechanical-engineering" element={<MechanicalEngineering />} /> {/* ルーティング設定 */}
+          <Route path="/subjects/mechanical-engineering/results" element={<Results />} />
             </Routes>
           </AuthProvider>
         </Router>
