@@ -1,7 +1,7 @@
 import React from 'react';
-import Card from '../components/Card';
 import Header from '../components/Header';
-import './subjects.css';
+import Card from '../components/Card';
+import './Subjects.css';
 
 function Subjects() {
   const categories = {
@@ -47,41 +47,44 @@ function Subjects() {
       ]
       // 他の分類とその科目を追加可能
     };
-  const getBackgroundImage = (categoryName) => {
-    const imageMap = {
-      '人文学': '/images/humanities.jpg',
-      '社会科学': '/images/social-sciences.jpg',
-      '自然科学': '/images/natural-sciences.jpg',
-      '工学': '/images/engineering.jpg',
-      '医学・健康科学': '/images/medicine.jpg',
+
+    const getGradient = (categoryName) => {
+      const gradientMap = {
+        '人文学': 'linear-gradient(45deg, rgba(121, 96, 232, 0.5), rgba(35, 195, 180, 0.5)) ',
+        '社会科学': 'linear-gradient(45deg, rgba(210, 220, 118,0.5),rgba(145, 199, 232,0.5)',
+        '自然科学': 'linear-gradient(45deg, rgba(248, 240, 214,0.5),rgba(141, 213, 205,0.5)',
+        '工学': 'linear-gradient(-30deg, rgba(134, 193, 247,0.5),rgba(21, 165, 56,0.5)',
+        '医学・健康科学': 'linear-gradient(45deg, rgba(251, 246, 253,0.5),rgba(206, 177, 240,0.5)',
+      };
+      console.log(gradientMap[categoryName]); 
+      return gradientMap[categoryName];
     };
-    return imageMap[categoryName];
-  };
+    
 
 
-  return (
-    <div className="subjects-page">
-      <Header />
-      <h2 className="subjects-intro">興味のある専門分野を選んでください</h2>
-      {Object.keys(categories).map((category) => (
-        <div key={category} className="category-section">
-          <h3>{category}</h3>
-          <div className="card-container">
-            {categories[category].map((subject, index) => (
-              <Card
+    return (
+      <div className="subjects-page">
+        <Header />
+        <h2 className="subjects-intro">興味のある専門分野を選んでください</h2>
+        {Object.keys(categories).map((category) => (
+          <div key={category} className="category-section">
+            <h3>{category}</h3>
+            <div className="card-container">
+              {categories[category].map((subject, index) => (
+                <Card
                 key={index}
                 title={subject.title}
                 to={subject.to}
-                image={getBackgroundImage(category)} // 背景画像のURLを設定
-              />
-            ))}
+                style={{ background: getGradient(category) }}
+              />              
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
-      <footer className="subjects-footer">Contact us: info@example.com</footer>
-    </div>
-  );
-}
+        ))}
+        <footer className="subjects-footer">Contact us: info@example.com</footer>
+      </div>
+    );
+  }
 
 export default Subjects;
 
