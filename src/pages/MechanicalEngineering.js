@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import './MechanicalEngineering.css';
@@ -13,26 +13,27 @@ const MechanicalEngineering = () => {
   
   const [selectedChoices, setSelectedChoices] = useState({});
   const [progress, setProgress] = useState(0);
-  const navigate = useNavigate();
   const [score, setScore] = useState(0);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleChoice = (word, choice) => {
-    // 新しい選択を追加または更新
     const newChoices = { ...selectedChoices, [word]: choice };
     setSelectedChoices(newChoices);
-  
-    // 進行度とスコアの計算
+
     const newProgress = Object.keys(newChoices).length;
     const newScore = Object.values(newChoices).reduce((total, current) => {
       if (current === "理解できる") return total + 5;
       if (current === "確信が持てない") return total + 2;
       return total;
     }, 0);
-  
+
     setScore(newScore);
     setProgress(newProgress);
   };
-  
   
   const handleCalculateSkill = () => {
     navigate('/subjects/mechanical-engineering/results', { state: { score } });
@@ -73,6 +74,5 @@ const MechanicalEngineering = () => {
     </div>
   );
 };
-
 
 export default MechanicalEngineering;

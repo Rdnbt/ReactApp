@@ -4,6 +4,9 @@
   min-height: 100vh; /* ページの最小の高さ */
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  margin: 0 auto; /* 中央寄りの配置 */
+  max-width: 1200px; /* コンテンツの最大幅 */
 }
 
 .subjects-header {

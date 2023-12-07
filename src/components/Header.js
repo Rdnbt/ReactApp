@@ -5,13 +5,13 @@ import './Header.css';
 const Header = memo(() => {
   return (
     <header className="header">
-      <Link to="/" className="header-logo">
+      <Link to="/subjects" className="header-logo">
         <img src="/brand-icon.png" alt="Brand" />
       </Link>
       <nav className="header-nav">
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/subjects">Subjects</Link></li>
+          <li><Link to="/subjects">Home</Link></li>
+          <li><Link to="/">Profile</Link></li>
           {/* 他のナビゲーション項目 */}
         </ul>
       </nav>

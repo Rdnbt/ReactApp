@@ -1,0 +1,29 @@
+.dashboard-container {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.8); /* 半透明 */
+    backdrop-filter: blur(10px); /* ブラー効果でモザイクグラス風 */
+    border-radius: 15px; /* 角を丸める */
+    padding: 20px; /* 内側の余白 */
+    margin-bottom: 20px; /* 下の要素との余白 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 影をつける */
+  }
+  
+  .logout-button-container {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 150vh;
+  }
+  

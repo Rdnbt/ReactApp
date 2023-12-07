@@ -19,7 +19,6 @@ import Results from './pages/Results';
 function App() {
   return (
     <Router>
-      <Header />
       <div className="main-content"> {/* メインコンテンツのためのクラス */}
             <AuthProvider>
               <Routes>
