@@ -3,6 +3,7 @@ import { useAuth } from '../../context/AuthContext';
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css'
+import Header from '../Header'
 
 export default function Login() {
   const emailRef = useRef()
@@ -28,33 +29,32 @@ export default function Login() {
   }
 
   return (
-    <div className="login-container">
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Log In</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
-            <Form.Group id="password" className='mb-3'>
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
-            </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
-             Log In 
-            </Button>
-          </Form>
-          <div className='w-100 text-center mt-3'>
-            <Link to="/forgot-password">Forgot Password?</Link>
-          </div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to='/signup'>Sign Up</Link>
+    <>
+      <Header />
+      <div className="login-container">
+        <h2 className='dashboard-title'>Log In</h2>
+        {error && <Alert variant="danger">{error}</Alert>}
+        <Form onSubmit={handleSubmit}>
+        <div className="text-label">
+          <strong>Email</strong>
+        </div>
+        <Form.Control type="email" ref={emailRef} required className="dashboard-email" />
+        <div className="text-label">
+          <strong>Password</strong>
+        </div>
+        <Form.Control type="password" ref={passwordRef} required className="dashboard-email" />
+          <Button disabled={loading} className="login-button-container" type="submit">
+            Log In 
+          </Button>
+        </Form>
+        <div className='w-100 text-center mt-3'>
+          <Link to="/forgot-password">Forgot Password?</Link>
+        </div>
+        <div className="w-100 text-center mt-2">
+          Need an account? <Link to='/signup'>Sign Up</Link>
+        </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }
 
