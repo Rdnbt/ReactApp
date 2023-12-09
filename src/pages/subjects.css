@@ -63,11 +63,13 @@
     display: none;
   }
 }
+
 .card-container .card {
   flex: 1 1 auto; /* Allows cards to grow and shrink as needed */
   min-width: 150px; /* Replace with the minimum width you desire */
   min-height: 100px; /* Replace with the minimum height you desire */
 }
+
 
 
 .subjects-intro {
