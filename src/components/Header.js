@@ -11,8 +11,9 @@ const Header = memo(() => {
       <nav className="header-nav">
         <ul>
           <li><Link to="/subjects">Home</Link></li>
-          <li><Link to="/">Profile</Link></li>
-          {/* 他のナビゲーション項目 */}
+          <li><Link to="/profile">Profile</Link></li>
+          <li><Link to="/dictionary">Words</Link></li>
+          {/* Other navigation items */}
         </ul>
       </nav>
     </header>
