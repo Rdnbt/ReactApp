@@ -11,7 +11,7 @@ import UpdateProfile from './components/login/UpdateProfile';
 import Subjects from './pages/Subjects';
 import { useNavigate } from 'react-router-dom';
 import Header from './components/Header';
-
+import RecommendedCourses from './pages/RecommendedCourses';
 import MechanicalEngineering from './pages/MechanicalEngineering'; // インポート
 import Results from './pages/Results';
 
@@ -30,6 +30,7 @@ function App() {
                 <Route path="/subjects" element={<PrivateRoute><Subjects /></PrivateRoute>} />
                 <Route path="/subjects/mechanical-engineering" element={<MechanicalEngineering />} /> {/* ルーティング設定 */}
                 <Route path="/subjects/mechanical-engineering/results" element={<Results />} />
+                <Route path="/subjects/mechanical-engineering/results/recommended-courses" element={<RecommendedCourses />} />
               </Routes>
             </AuthProvider>
       </div>

@@ -34,4 +34,17 @@
   }
   
 
+  .study-button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* あなたの好みの色に */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .study-button:hover {
+    background-color: #45a049; /* ホバー時の色 */
+  }
   
