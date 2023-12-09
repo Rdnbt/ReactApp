@@ -112,18 +112,20 @@ const VocabularyGraph = () => {
       .on("mouseover", function(event, d) {
         d3.select(event.target)
           .transition()
-          .style('transform-origin', 'center center')
           .duration(300)
-          .attr("r", 48) // Increase radius by a scale of 1.2
-          .attr("fill", '#7960E8'); // Change color
+          .attr("r", 48) // Increase radius
+          .attr("fill", '#7960E8') // Change color
+          .attr('stroke-width', 3) // Make the stroke width larger
+          .attr('stroke', '#fff'); // Change stroke color to make the node stand out
       })
       .on("mouseout", function(event, d) {
         d3.select(event.target)
           .transition()
           .duration(300)
           .attr("r", 40) // Reset radius
-          .attr("fill", '#23C3B4')// Reset color
-          .attr('transform', '');
+          .attr("fill", '#23C3B4') // Reset fill color
+          .attr('stroke-width', 1.5) // Reset stroke width
+          .attr('stroke', '#fff'); // Reset stroke color
       })
       .on('click', (event, d) => {
         // Start fade-out for the currently displayed detail card
