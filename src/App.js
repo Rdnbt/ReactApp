@@ -14,7 +14,7 @@ import Header from './components/Header';
 import RecommendedCourses from './pages/RecommendedCourses';
 import MechanicalEngineering from './pages/MechanicalEngineering'; // インポート
 import Results from './pages/Results';
-
+import VocabularyGraph from './pages/ConnectedWords/VocabularyGraph';
 
 function App() {
   return (
@@ -31,6 +31,7 @@ function App() {
                 <Route path="/subjects/mechanical-engineering" element={<MechanicalEngineering />} /> {/* ルーティング設定 */}
                 <Route path="/subjects/mechanical-engineering/results" element={<Results />} />
                 <Route path="/subjects/mechanical-engineering/results/recommended-courses" element={<RecommendedCourses />} />
+                <Route path="/dictionary" element={<VocabularyGraph />} /> {/* New route for Dictionary page */}
               </Routes>
             </AuthProvider>
       </div>

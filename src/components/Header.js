@@ -10,7 +10,7 @@ const Header = memo(() => {
       </Link>
       <nav className="header-nav">
         <ul>
-          <li><Link to="/subjects">Home</Link></li>
+          <li><Link to="/dictionary">Dictionary</Link></li>
           <li><Link to="/">Profile</Link></li>
           {/* 他のナビゲーション項目 */}
         </ul>
