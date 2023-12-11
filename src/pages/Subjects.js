@@ -81,7 +81,7 @@ function Subjects() {
             </div>
           </div>
         ))}
-        <footer className="subjects-footer">Contact us: info@example.com</footer>
+        <footer className="subjects-footer">Contact us: lingualive.en@gmail.com</footer>
       </div>
     );
   }

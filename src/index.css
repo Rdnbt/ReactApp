@@ -5,12 +5,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('/public/flower.png'); /* flower.pngを背景画像として設定 */
-  background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
-  background-position: top center; /* 画像を上から配置し、センターに合わせる */
-  background-size: auto; /* 画像の大きさを変更しない */
+
+  background-image: url('/public/flower.png'); 
+  background-repeat: no-repeat; 
+  background-position: top center; 
+  background-size: auto; 
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/public/Noise.png'); /* Adjusted path */
+  background-repeat: repeat;
+  background-position: top left;
+  opacity: 0.5; /* 50% opacity */
+  mix-blend-mode: overlay;
+  z-index: -1;
+}
+
+
+/* code styles... */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

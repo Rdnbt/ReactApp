@@ -12,7 +12,7 @@ const Results = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowAnimation(false);
-    }, 3000); // 3秒後にアニメーションを非表示にする
+    }, 1000); // 3秒後にアニメーションを非表示にする
 
     return () => clearTimeout(timer);
   }, []);
